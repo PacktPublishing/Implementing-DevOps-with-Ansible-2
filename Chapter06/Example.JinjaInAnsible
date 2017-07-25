@@ -1,0 +1,9 @@
+---
+- name: Simple Ansible Playbook that loops over hosts within Jinja
+  vars:
+    say_hello
+    say_something: "{{ say_hello }}"
+
+  tasks:
+    - debug:
+        msg: "{{ say_something }}"

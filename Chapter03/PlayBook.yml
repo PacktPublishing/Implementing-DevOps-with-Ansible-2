@@ -1,0 +1,13 @@
+#Playbook.yml
+---
+- hosts: all
+  tasks:
+   - name: "Install Apache"
+     apt: name={{ item }} state=present
+     with_items:
+       - apache2
+
+   - name: "Turn on Apache and set it to run on boot"
+     service: name={{ item }} state=started enabled=yes
+     with_items:
+       - apache2

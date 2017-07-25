@@ -1,0 +1,11 @@
+# Example Ansible Jinja2 Template
+- hosts:  all
+  vars:
+    my_var: ‘Hello’
+    my_var2: ‘World’
+  tasks:
+    - name: Simple Ansible MOTD Template Example
+      template:
+        src: motdexample.j2
+        dest: /etc/motd
+        mode: 0777

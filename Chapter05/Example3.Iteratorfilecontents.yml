@@ -1,0 +1,12 @@
+# Example Playbook which Iterates Over the Contents of Two Files (iterator_file_contents.yml)
+---
+- name: Say hello to our favorite Looney Toons
+  hosts: all
+
+  tasks:
+    - name: Say Hello to Our Favorite Looney Toons
+      debug:
+        msg: "{{ item }}"
+        with_file:
+          - hello.txt
+          - favorite_toons.txt 

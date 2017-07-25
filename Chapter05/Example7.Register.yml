@@ -1,0 +1,6 @@
+---
+- name: A Simple Ansible Register Example
+  hosts: all
+  tasks:
+      - shell: tail -n 100 /etc/motd
+        register: motd_contents

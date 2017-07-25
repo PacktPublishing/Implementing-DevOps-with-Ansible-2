@@ -1,0 +1,14 @@
+--
+- name: registered variable usage as a with_items list
+  hosts: all
+
+  tasks:
+
+      - name: retrieve the list of home directories
+        command: ls /home
+        register: home_dirs
+
+      - name: add home dirs to the backup spooler
+        file: path=/mnt/bkspool/{{ item }} src=/home/{{ item }} state=link
+        with_items: "{{ home_dirs.stdout_lines }}"
+        # same as with_items: "{{ home_dirs.stdout.split() }}"

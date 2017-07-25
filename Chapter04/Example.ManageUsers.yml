@@ -1,0 +1,20 @@
+# Create a User 'dortiz' 
+---
+- hosts: all
+
+  tasks:
+    - name: Add David Ortiz User to the System
+      user: 
+        name: dortiz
+        comment: "David Ortiz has entered the building"
+
+# Create a User 'jdaemon' and add to group baseballplayers
+---
+- hosts: all
+
+  tasks:  
+    - name: Add Johnny Daemon User to the System
+      user: 
+        name: jdaemon
+        comment: "Johnny Daemon has entered the building"
+        groups: baseballplayers

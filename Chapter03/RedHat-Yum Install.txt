@@ -1,0 +1,6 @@
+# NOTE: Before installing Ansible you may need to install the epel-release repo
+# for RHEL or 
+# Scientific Linux. Additional details on how to install EPEL can be found at
+# http://fedoraproject.org/wiki/EPEL
+$ sudo yum install ansible
+

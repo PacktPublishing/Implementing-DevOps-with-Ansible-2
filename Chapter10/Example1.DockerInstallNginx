@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+   - name: Installs NGINX web server on a Docker Image
+     apt: pkg=nginx state=installed update_cache=true
+     notify:
+       - start nginx
+
+  handlers:
+   - name: start nginx
+     service: name=nginx state=started

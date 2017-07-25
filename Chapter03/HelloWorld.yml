@@ -1,0 +1,5 @@
+# File name: HelloDevOpsWorld.yml
+---
+- hosts: all
+  tasks:
+    - shell: echo "hello DevOps world"

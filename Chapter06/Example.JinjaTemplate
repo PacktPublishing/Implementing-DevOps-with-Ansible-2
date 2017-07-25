@@ -1,0 +1,19 @@
+# Example Ansible playbook & Jinja Template
+---
+- name: Hello World Conditional Logic within a Jinja template
+  user: root
+  hosts: all
+  vars:
+    vhost:
+       servername: my.server
+       documentroot: /var/www
+       serveradmin: bob
+  tasks:
+
+    # Jinja template file example
+    - template:
+        src: /jinjatemplates/httpdconf.j2
+        dest: /etc/httpd/httpd.conf
+        owner: root
+        group: wheel
+        mode: "u=rw,g=r,o=r"

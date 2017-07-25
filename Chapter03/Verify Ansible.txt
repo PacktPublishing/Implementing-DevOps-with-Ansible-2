@@ -1,0 +1,4 @@
+# Display Ansible command line options available
+$ ansible --help
+# Show the Ansible version number
+$ ansible --version

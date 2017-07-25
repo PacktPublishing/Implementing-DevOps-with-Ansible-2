@@ -1,0 +1,6 @@
+# Example Ansible hosts file with two defined groups
+
+[WEB]
+192.168.10.10
+[DATABASE]
+192.168.10.11

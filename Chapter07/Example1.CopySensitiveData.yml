@@ -1,0 +1,6 @@
+---
+- include_vars: sensitive_data.yml
+- name: Copy sensitive data file from Ansible control server to target hosts
+  copy:
+    content="{{secret_text}}"
+    dest=/tmp/secret_text.txt

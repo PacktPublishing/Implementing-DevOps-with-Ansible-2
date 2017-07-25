@@ -1,0 +1,7 @@
+pkgadd -d http://get.opencsw.org/now
+/opt/csw/bin/pkgutil -i ansiblePacman for Arch Linux
+# Installing Ansible for Arch Linux is quite simple. The following command should help accomplish this task:
+
+# Note: If you have Python3 selected you must set 
+# ansible_python_interpreter = /usr/bin/python2 # in your inventory variables
+$> pacman -S ansible

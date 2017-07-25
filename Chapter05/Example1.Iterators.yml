@@ -1,0 +1,27 @@
+# playbook.yml without list based iterators
+---
+- hosts: all
+  tasks:
+    - name: Install Apache2
+      apt: name=apache2 state=installed
+
+    - name: Install VIM
+      apt: name=vim state=installed
+
+    - name: Install TMUX
+      apt: name=tmux state=installed
+
+    - name: Install MOSH
+      apt: name=mosh state=installed
+
+# playbook.yml using an Iterator to install packages
+---
+- hosts: all
+  tasks:
+    - name: Install list of packages
+      apt: name={{item}} state=installed
+        with_items:
+          - apache2
+          - vim
+          - tmux
+          - mosh

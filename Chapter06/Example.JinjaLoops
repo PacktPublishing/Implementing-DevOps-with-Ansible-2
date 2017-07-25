@@ -1,0 +1,9 @@
+# Example of loops using Jinja
+--
+- name: Simple Ansible Playbook that loops over hosts within Jinja
+  vars:
+    servers_to_configure: "{{ groups['databaseservers'] }}"
+  tasks:
+    - template:
+      src: configfile.j2
+      dest: configfile.conf

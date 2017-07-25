@@ -1,0 +1,7 @@
+# Example Jinja Playbook
+- hosts: all
+  vars:
+    foo: "{{ lookup('env', 'FOO' }}"
+  tasks:
+    - Name: Copy file
+      copy: src="{{ foo }}" dest=/some/path mode=0775 owner=user group=user

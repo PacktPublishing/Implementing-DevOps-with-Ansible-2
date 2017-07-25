@@ -1,0 +1,21 @@
+# playbook.yml
+---
+- hosts: all
+  tasks:
+    - name: Install Apache
+      apt: name=apache2 state=present
+
+    - name: Install PHP module for Apache
+      apt: name=libapache2-mod-php5 state=present
+
+    - name: Install PHP
+      apt: name=libapache2-mod-php5 state=present
+
+    - name: Install MySQL
+      apt: name=libapache2-mod-php5 state=present
+
+    - name: 3. start Apache
+      service: name=apache2 state=running enabled=yes
+
+    - name: 4. install Hello World PHP script
+      copy: src=index.php dest=/var/www/index.php

@@ -1,0 +1,12 @@
+# Conditional Logic Playbook Example
+---
+- name: Hello World Conditional Logic
+  user: root
+  hosts: all
+  vars:
+    hello: true
+    say_something: "{% if hello == true %} Hello Jinja {% else %} Goodbye Ansible {% endif %}
+  tasks:
+    - debug:
+        msg: "{{ say_something }}"
+

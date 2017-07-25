@@ -1,0 +1,10 @@
+# Example: Simple Key/Value Variables in Ansible. 
+---
+- hosts: all
+  vars:
+    # Single Variable(s) Example
+    myvar: helloworld
+
+  tasks:
+    - name: $myvar
+      ping:

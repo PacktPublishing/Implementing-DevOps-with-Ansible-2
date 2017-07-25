@@ -1,0 +1,19 @@
+--
+- name: Example Handler
+  hosts: all
+  tasks:
+    - command: service httpd restart
+      notify: restart service
+
+    - command: service mysqld restart
+      notify: restart service
+
+    - command: service cron.d restart
+      notify: restart service
+
+    - command: service iptables restart
+      notify: restart service
+
+  handlers:
+    - name: restart service
+      include: tasks/restart_verify.yml

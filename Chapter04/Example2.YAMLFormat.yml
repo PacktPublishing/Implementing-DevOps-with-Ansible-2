@@ -1,0 +1,10 @@
+# Example YAML formatting with Comments and multiple entries
+---
+- hosts: all
+  vars :
+    http_port : 80
+    tasks:
+    - name: Install nginx web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx

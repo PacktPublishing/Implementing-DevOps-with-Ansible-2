@@ -1,0 +1,3 @@
+# The first command is optional, you may need to unmask the Ansible package prior to running emerge:
+$ echo 'app-admin/ansible' >> /etc/portage/package.accept_keywords
+$ emerge -av app-admin/ansible

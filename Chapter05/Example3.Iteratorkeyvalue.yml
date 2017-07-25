@@ -1,0 +1,21 @@
+# Example of iterating over a YAML dictionary (iterator_keyvalue.yml)
+# To execute save this as a YML file and run the following command 
+# > ansible-playbook -i 'localhost,' -c local iterator_keyvalue.yml
+---
+- name: Say Hello to our Favorite Looney Tune Characters
+  hosts: all
+
+  vars:
+    looney_tunes_characters:
+      bugs:
+        full_name: Bugs A Bunny
+      daffy:
+        full_name: Daffy E Duck
+      wiley:
+        full_name: Wiley E Coyote
+
+  tasks:
+    - name: Show Our Favorite Looney Tunes
+      debug:
+      msg: "Hello there: {{ item.key }} your real name is {{ item.value.full_name }}"
+      with_dict: "{{ looney_tunes_charachters }}"

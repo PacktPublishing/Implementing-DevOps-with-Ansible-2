@@ -1,0 +1,10 @@
+# Example Ansible Playbook, which targets the 'WEB' group
+---
+- hosts: WEB
+  vars :
+    http_port : 80
+  tasks:
+    - name: Install nginx web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx

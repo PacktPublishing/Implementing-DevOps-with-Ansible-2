@@ -1,0 +1,15 @@
+---
+- name: Build a docker container using the command line
+  hosts: all
+
+tasks:
+ - name: build a docker container 
+   command: docker build -t build-a-docker-container:ex2b ./site
+
+- name: run a site within a docker container
+  docker:
+   name: mysite
+   image: "build-a-docker-container:ex2b"
+   state: reloaded
+   publish_all_ports: yes
+   use_tls: encrypt

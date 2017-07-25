@@ -1,0 +1,10 @@
+# This is an example of a 'play' include
+
+- include: myplaybook.yml
+- name: some play
+  hosts: all
+  tasks:
+    - debug: msg=hello
+
+    # An Example of a task level include
+    - include: additionaltasks.yml

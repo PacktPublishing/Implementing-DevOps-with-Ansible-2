@@ -1,0 +1,10 @@
+--- 
+- 
+  hosts: webserver
+  name: "Iteration Example using With_Items and Play_Hosts"
+  tasks: 
+    - 
+      debug: ~
+      msg: "Host Identified: {{ item }}"
+      with_items: 
+        - "{{ play_hosts }}"

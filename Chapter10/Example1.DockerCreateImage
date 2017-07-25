@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+
+  - name: Build Docker Image
+     docker_image:
+     path: /opt/test
+     name: myimage

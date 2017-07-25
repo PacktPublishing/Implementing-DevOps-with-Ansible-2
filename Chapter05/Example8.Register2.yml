@@ -1,0 +1,9 @@
+---
+- name: A Simple Ansible Register Example
+  hosts: all
+  tasks:
+      - shell: tail -n 100 /etc/motd
+        register: motd_contents
+
+     - shell: echo "Our MOTD file contains the word Bugs Bunny"
+        when: motd_contents.stdout.find('bugs bunny') != -1
